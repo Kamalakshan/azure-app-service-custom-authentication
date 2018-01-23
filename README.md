@@ -1,2 +1,4 @@
-# azure-app-service-custom-authentication
-Custom authentication samples for Azure App Service
+# Azure App Service - Custom Authentication
+
+This is a companion repository to the article at https://www.newventuresoftware.com/blog/custom-authentication-with-azure-mobile-apps
+
