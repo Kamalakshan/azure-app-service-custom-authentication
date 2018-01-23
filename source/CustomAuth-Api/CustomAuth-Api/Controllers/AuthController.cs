@@ -5,10 +5,9 @@ using System.Net.Http;
 using System.Security.Claims;
 using System.Web.Http;
 using CustomAuth_Api.DataObjects;
-using Microsoft.Azure.Mobile.Server.Config;
 using Microsoft.Azure.Mobile.Server.Login;
 
-namespace customauthblogService.Controllers
+namespace CustomAuth_Api.Controllers
 {
     public class AuthController : ApiController
     {
@@ -64,7 +63,7 @@ namespace customauthblogService.Controllers
 
             if (string.IsNullOrEmpty(settings.HostName))
             {
-                return "http://localhost";
+                return DebugAuthSettings.ValidAudiences;
             }
             else
             {
@@ -80,7 +79,7 @@ namespace customauthblogService.Controllers
             {
                 // this key is for debuggint and testing purposes only
                 // this key should match the one supplied in Startup.MobileApp.cs
-                return "GfYVqdtZUJQfghRiaonAeRQRDjytRi47";
+                return DebugAuthSettings.SigningKey;
             }
             else
             {

@@ -19,9 +19,9 @@ namespace CustomAuth_Api
                 // only have a value when running in an App Service application.
                 app.UseAppServiceAuthentication(new AppServiceAuthenticationOptions
                 {
-                    SigningKey = ConfigurationManager.AppSettings["SigningKey"],
-                    ValidAudiences = new[] { ConfigurationManager.AppSettings["ValidAudience"] },
-                    ValidIssuers = new[] { ConfigurationManager.AppSettings["ValidIssuer"] },
+                    SigningKey = DebugAuthSettings.SigningKey,
+                    ValidAudiences = new[] { DebugAuthSettings.ValidAudiences },
+                    ValidIssuers = new[] { DebugAuthSettings.ValidIssuers },
                     TokenHandler = config.GetAppServiceTokenHandler()
                 });
             }
